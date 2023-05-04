@@ -1,0 +1,32 @@
+div.container {
+  position: relative;
+  background-color: black;
+  width: 500px;
+  height: 1500px;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+}
+
+.box1 {
+  background-color: aqua;
+}
+
+.box2 {
+  background-color: peru;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  transition: all 0.5s;
+}
+
+.box3 {
+  background-color: greenyellow;
+}
+
+.box2:hover {
+  cursor: pointer;
+  transform: scale(0.9);
+}

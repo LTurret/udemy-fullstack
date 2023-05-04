@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>日本旅遊推薦</title>
+    <meta name="author" content="LTurret" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./style/style.css" />
+  </head>
+  <body>
+    <img
+      class="fixed-image"
+      src="./assets/images/富士山2.jpg"
+      alt="fixed-image"
+    />
+
+    <header>
+      <section class="logo">
+        <img src="./assets/images/網站Logo.svg" alt="日本旅遊網Logo" />
+        <h1>望月杏奈可愛</h1>
+      </section>
+      <nav>
+        <ul>
+          <li>
+            <a href="#"><i class="fa-solid fa-plane"></i> 日本旅遊</a>
+          </li>
+          <li>
+            <a href="#"
+              ><i class="fa-solid fa-right-to-bracket"></i> 會員登入</a
+            >
+          </li>
+          <li>
+            <a href="#"><i class="fa-solid fa-book"></i> 預約行程</a>
+          </li>
+          <li>
+            <a href="#"><i class="fa-solid fa-address-book"></i> 聯絡我們</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="background-img">
+        <div class="filter"></div>
+        <h3>Vivid_rabbit<br />望月杏奈超可愛</h3>
+      </section>
+
+      <section class="info-circles">
+        <h3>遊玩主題</h3>
+        <div class="circles">
+          <div class="circle">
+            <img src="./assets/images/北海道雪景.jpg" alt="北海道雪景" />
+            <p>北海道雪景，美不勝收</p>
+          </div>
+          <div class="circle">
+            <img src="./assets/images/日本壽司.jpg" alt="日本壽司" />
+            <p>日本壽司</p>
+          </div>
+          <div class="circle">
+            <img src="./assets/images/富士山.jpg" alt="富士山" />
+            <p>富士山</p>
+          </div>
+          <div class="circle">
+            <img src="./assets/images/清水寺.jpg" alt="清水寺" />
+            <p>清水寺</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="empty-container">
+        <h3>今天就開始入坑，成為製作人</h3>
+      </section>
+
+      <section class="google-map">
+        <h3>日本地理位置</h3>
+        <p>來找望月杏奈</p>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d832560.3178539019!2d138.81527404521563!3d35.40057193578274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601854c7fb67d4ab%3A0x11f79cd042272356!2sKanagawa%2C%20Japan!5e0!3m2!1sen!2stw!4v1681193982017!5m2!1sen!2stw"
+          width="600"
+          height="450"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </section>
+    </main>
+
+    <footer>
+      <section class="Logo">
+        <img src="./assets/images/網站Logo.svg" alt="網站Logo" />
+        <h3>望月杏奈可愛</h3>
+      </section>
+      <section class="links">
+        <a href="#">
+          <img src="./assets/Icons/facebook.svg" alt="facebook" />
+          <img src="./assets/Icons/twitter.svg" alt="twitter.svg" />
+          <img src="./assets/Icons/instagram.svg" alt="instagram.svg" />
+          <img src="./assets/Icons/youtube.svg" alt="youtube.svg" />
+        </a>
+      </section>
+    </footer>
+
+    <script>
+      setInterval(() => {
+        let topBackground = document.querySelector("section.background-img");
+        console.log(topBackground.style.backgroundImage);
+        if (
+          topBackground.style.backgroundImage ==
+          'url("./assets/images/日本櫻花.jpg")'
+        ) {
+          topBackground.style.backgroundImage =
+            'url("./assets/images/京都古城.jpg")';
+        } else if (
+          topBackground.style.backgroundImage ==
+          'url("./assets/images/京都古城.jpg")'
+        ) {
+          topBackground.style.backgroundImage =
+            'url("./assets/images/大阪街頭.jpg")';
+        } else {
+          topBackground.style.backgroundImage =
+            'url("./assets/images/日本櫻花.jpg")';
+        }
+      }, 3000);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="關於超級喜歡望月杏奈的網頁" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>我ㄉ網頁</title>
+  </head>
+  <body>
+    <h1>十點絕對不能錯過的望月杏奈資訊</h1>
+    <h2>推薦好站</h2>
+    <a
+      class="anna"
+      href="https://millionlive-anime.idolmaster-official.jp/Is370IbVyq/wp-content/themes/ani-million-v2/assets/character/anna/character.png"
+      target="_blank"
+      >百萬動畫立繪</a
+    >
+
+    <h3>兔子王 女僕王</h3>
+    <ul>
+      <li>望月杏奈</li>
+      <li>Mochizuki Anna</li>
+      <li>Anna</li>
+    </ul>
+
+    <h3>杏奈的好</h3>
+    <ol type="1">
+      <li>非常可愛</li>
+      <li>軟軟的</li>
+      <li>軟綿綿的</li>
+    </ol>
+
+    <img src="./image/POPLINKS.png" alt="望月杏奈" />
+
+    <form action="">
+      <p>現在就把錢錢都給杏奈吧！</p>
+      <label for="credit-card">卡號：</label>
+      <input type="text" name="cardNumber" id="credit-card" />
+
+      <label for="cvv">CVC：</label>
+      <input type="password" name="cvv" id="cvv" minlength="3" maxlength="3" />
+      <input type="checkbox" onclick="showPassword" id="show" />
+      <label for="show">顯示密碼</label>
+
+      <button type="reset">重置</button>
+      <button id="alert" type="button">普通按鈕</button>
+      <button type="submit">送出！</button>
+    </form>
+    <script>
+      let checkbox = document.querySelector("#show");
+      let password = document.querySelector("#cvv");
+      checkbox.addEventListener("click", () => {
+        if (password.type == "password") {
+          password.type = "text";
+        } else {
+          password.type = "password";
+        }
+      });
+
+      let btn = document.querySelector("#alert");
+      btn.addEventListener("click", () => {
+        alert("ㄤ奈");
+      });
+    </script>
+  </body>
+</html>
