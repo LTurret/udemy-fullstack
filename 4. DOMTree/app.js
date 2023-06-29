@@ -1,2 +1,6 @@
-let i = document.getElementById("boo");
-i.style.color = "#555555";
+let button = document.querySelector("button");
+
+button.addEventListener("click", () => {
+  let form = document.querySelector("form");
+  form.reset();
+});
