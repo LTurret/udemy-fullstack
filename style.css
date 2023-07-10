@@ -1,0 +1,59 @@
+@charset "UTF-8";
+* {
+  background-color: #212529;
+  color: #f8f9fa;
+  text-decoration: none;
+  border: 0;
+  margin: 0;
+}
+
+h1 {
+  margin: 1rem;
+}
+
+ul {
+  list-style-type: none;
+}
+ul li {
+  margin: 1rem;
+}
+ul li p,
+ul li a {
+  font-size: 1.2rem;
+}
+ul li a::before {
+  color: #e0bd4e;
+  content: "這個可以點:)｜";
+}
+ul li p::before {
+  color: #6495cf;
+  content: "這個不能點:(｜";
+}
+
+div.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section.project {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+section.project p,
+section.project a {
+  transition: all 0.5s ease-in-out;
+}
+section.project p:hover,
+section.project a:hover {
+  font-size: 1.5rem;
+}
+
+p.danger {
+  color: #ea5b76;
+  font-size: 5rem;
+}
+p.danger:hover {
+  cursor: pointer;
+}/*# sourceMappingURL=style.css.map */
