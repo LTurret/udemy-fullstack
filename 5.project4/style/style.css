@@ -142,4 +142,12 @@ body main section.main-part div.result h1#result-gpa {
   66% {
     border-color: yellow;
   }
+}
+@keyframes scaleUp {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
 }/*# sourceMappingURL=style.css.map */
