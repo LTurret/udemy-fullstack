@@ -245,3 +245,12 @@ addButton.addEventListener("click", () => {
 
   newForm.style.animation = "scaleUp 0.2s cubic-bezier(0,1.43,.85,1) forwards";
 });
+
+window.addEventListener("click", () => {
+  let allTrash = document.querySelectorAll(".trash-button");
+  allTrash.forEach((trash) => {
+    trash.addEventListener("click", (event) => {
+      event.target.parentElement.parentElement.remove();
+    });
+  });
+});
