@@ -3,6 +3,8 @@ let animation = document.querySelector("section.animation-wrapper");
 
 const time_line = new TimelineMax();
 
+let allTrash = document.querySelectorAll(".trash-button");
+
 time_line
   .fromTo(
     hero,
@@ -82,7 +84,7 @@ function convertor(grade) {
 function setGPA() {
   let formLength = document.querySelectorAll("form").length;
   let credits = document.querySelectorAll(".class-credit");
-  let selects = document.querySelectorAll("#select");
+  let selects = document.querySelectorAll("select");
   let sum = 0;
   let creditSum = 0;
 
@@ -247,10 +249,177 @@ addButton.addEventListener("click", () => {
 });
 
 window.addEventListener("click", () => {
-  let allTrash = document.querySelectorAll(".trash-button");
+  allTrash = document.querySelectorAll(".trash-button");
   allTrash.forEach((trash) => {
     trash.addEventListener("click", (event) => {
       event.target.parentElement.parentElement.remove();
     });
   });
+  // setGPA();
 });
+
+let btnSortD = document.querySelector(".sort-descending");
+let btnSortA = document.querySelector(".sort-ascending");
+btnSortD.addEventListener("click", () => {
+  handleSorting("descending");
+});
+btnSortA.addEventListener("click", () => {
+  handleSorting("ascending");
+});
+
+function handleSorting(direction) {
+  let graders = document.querySelectorAll("div.grader");
+  let objectArray = [];
+
+  for (let i = 0; i < graders.length; i++) {
+    let class_name = graders[i].children[0].value;
+    let class_number = graders[i].children[1].value;
+    let class_credit = graders[i].children[2].value;
+    let class_grade = graders[i].children[3].value;
+
+    if (
+      !(
+        class_name == "" &&
+        class_number == "" &&
+        class_credit == "" &&
+        class_grade == ""
+      )
+    ) {
+      let class_object = {
+        class_name,
+        class_number,
+        class_credit,
+        class_grade,
+      };
+      objectArray.push(class_object);
+    }
+  }
+
+  for (let i = 0; i < objectArray.length; i++) {
+    objectArray[i].class_grade_number = convertor(objectArray[i].class_grade);
+  }
+
+  objectArray = mergeSort(objectArray);
+  if (direction == "descending") {
+    objectArray = objectArray.reverse();
+  }
+
+  let allInputs = document.querySelector(".all-inputs");
+  allInputs.innerHTML = "";
+
+  for (let i = 0; i < objectArray.length; i++) {
+    allInputs.innerHTML += `<form>
+    <div class="grader">
+        <input
+        type="text"
+        placeholder="class category"
+        class="class-type"
+        list="opt"
+        value=${objectArray[i].class_name}
+        /><!--
+        --><input
+        type="text"
+        placeholder="class number"
+        class="class-number"
+        value=${objectArray[i].class_number}
+        /><!--
+        --><input
+        type="number"
+        placeholder="credits"
+        min="0"
+        max="6"
+        class="class-credit"
+        value=${objectArray[i].class_credit}
+        /><!--
+        --><select name="select" class="select">
+        <option value=""></option>
+        <option value="A">A</option>
+        <option value="A-">A-</option>
+        <option value="B+">B+</option>
+        <option value="B">B</option>
+        <option value="B-">B-</option>
+        <option value="C+">C+</option>
+        <option value="C">C</option>
+        <option value="C-">C-</option>
+        <option value="D+">D+</option>
+        <option value="D">D</option>
+        <option value="D-">D-</option>
+        <option value="F">F</option></select
+        ><!--
+        --><button class="trash-button">
+        <i class="fas fa-trash"></i>
+        </button>
+    </div>
+    </form>`;
+  }
+
+  graders = document.querySelectorAll("div.grader");
+  for (let i = 0; i < graders.length; i++) {
+    graders[i].children[3].value = objectArray[i].class_grade;
+  }
+
+  let allSelects = document.querySelectorAll("select");
+  allSelects.forEach((select) => {
+    select.addEventListener("change", () => {
+      setGPA();
+    });
+  });
+
+  let allCredits = document.querySelectorAll(".class-credit");
+  console.log(allCredits);
+  allCredits.forEach((credit) => {
+    credit.addEventListener("change", () => {
+      setGPA();
+    });
+  });
+
+  let allTrash = document.querySelectorAll(".trash-button");
+  allTrash.forEach((trash) => {
+    trash.addEventListener("click", () => {
+      setGPA();
+    });
+  });
+}
+
+function merge(a1, a2) {
+  let result = [];
+  let i = 0;
+  let j = 0;
+
+  while (i < a1.length && j < a2.length) {
+    if (a1[i].class_grade_number > a2[j].class_grade_number) {
+      result.push(a2[j]);
+      j++;
+    } else {
+      result.push(a1[i]);
+      i++;
+    }
+  }
+
+  while (i < a1.length) {
+    result.push(a1[i]);
+    i++;
+  }
+
+  while (j < a2.length) {
+    result.push(a2[j]);
+    j++;
+  }
+
+  return result;
+}
+
+function mergeSort(arr) {
+  if (arr.length == 0) {
+    return;
+  }
+
+  if (arr.length == 1) {
+    return arr;
+  } else {
+    let middle = Math.floor(arr.length / 2);
+    let left = arr.slice(0, middle);
+    let right = arr.slice(middle, arr.length);
+    return merge(mergeSort(left), mergeSort(right));
+  }
+}

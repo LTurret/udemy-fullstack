@@ -132,6 +132,11 @@ body main section.main-part div.result h1#result-gpa {
   font-weight: bold;
 }
 
+.remove {
+  transform: scale(0);
+  transition: all 0.5s ease;
+}
+
 @keyframes border_color {
   0% {
     border-color: red;
