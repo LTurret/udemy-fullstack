@@ -1,0 +1,78 @@
+@font-face {
+  font-family: jf-openhuninn;
+  src: url("./../assets/jf-openhuninn-2.1.ttf");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: jf-openhuninn;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+body nav {
+  background-color: white;
+}
+body nav ul {
+  display: flex;
+}
+body nav ul li {
+  list-style-type: none;
+  margin: 1rem;
+}
+body nav ul li a {
+  color: black;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+body nav ul li a:hover {
+  color: rgb(54, 212, 138);
+}
+body main section.main-area {
+  min-height: 70vh;
+  background-color: white;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+body main section.main-area div.info {
+  flex-basis: 500px;
+  padding: 1rem;
+}
+body main section.main-area div.info h1 {
+  font-size: 3.5rem;
+}
+body main section.main-area div.info h2 {
+  margin-top: 1.25rem;
+  font-size: 1rem;
+}
+body main section.main-area div.info a {
+  color: white;
+  background-color: rgb(54, 212, 138);
+  padding: 0.75rem;
+  font-size: 1.5rem;
+  border-radius: 20px;
+  display: inline-block;
+  margin-top: 2rem;
+  margin-right: 0.25rem;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+body main section.main-area div.info a:hover {
+  transform: scale(1.2);
+}
+body main section.main-area div.img-area {
+  flex-basis: 450px;
+}
+body main section.main-area div.img-area img {
+  width: 50%;
+}/*# sourceMappingURL=style.css.map */
