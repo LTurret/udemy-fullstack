@@ -1,0 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  background-color: aquamarine;
+}
+
+header nav ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+header nav ul li {
+  list-style-type: none;
+}
+header nav ul li a {
+  color: red;
+  -webkit-text-decoration: dotted;
+          text-decoration: dotted;
+}/*# sourceMappingURL=style.css.map */

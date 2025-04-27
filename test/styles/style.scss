@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    background-color: aquamarine;
+}
+
+header {
+    nav {
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            li {
+                list-style-type: none;
+                a {
+                    color: red;
+                    text-decoration: dotted;
+                }
+            }
+        }
+    }
+}
