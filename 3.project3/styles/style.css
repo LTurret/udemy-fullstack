@@ -102,6 +102,7 @@ body main section.resume section.table {
   padding: 2rem;
 }
 body main section.resume section.table table {
+  --bs-table-bg: none;
   border-collapse: collapse;
 }
 body main section.resume section.table table tr {

@@ -119,16 +119,20 @@ body {
 
       section.table {
         flex: 5 1 500px;
-        // border: 2px solid red;
         padding: 2rem;
+
         table {
+          --bs-table-bg: none;
           border-collapse: collapse;
+
           tr {
             border-bottom: 2px solid gray;
             transition: all 0.2s ease;
+
             &:hover {
               background-color: rgb(184, 255, 222);
             }
+
             td {
               padding: 1rem;
             }
