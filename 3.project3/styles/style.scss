@@ -94,15 +94,44 @@ body {
       display: flex;
       justify-content: center;
 
-      section.description {
-        width: 50%;
-        text-align: center;
+      section.title {
         h2 {
           font-size: 2rem;
         }
+      }
+
+      section.description {
+        width: 20%;
+        text-align: center;
+
         .progress-bar-area {
           p {
             margin-top: 1rem;
+          }
+        }
+      }
+    }
+
+    section.resume {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 2rem;
+
+      section.table {
+        flex: 5 1 500px;
+        // border: 2px solid red;
+        padding: 2rem;
+        table {
+          border-collapse: collapse;
+          tr {
+            border-bottom: 2px solid gray;
+            transition: all 0.2s ease;
+            &:hover {
+              background-color: rgb(184, 255, 222);
+            }
+            td {
+              padding: 1rem;
+            }
           }
         }
       }

@@ -82,13 +82,35 @@ body main section.about-me {
   display: flex;
   justify-content: center;
 }
-body main section.about-me section.description {
-  width: 50%;
-  text-align: center;
-}
-body main section.about-me section.description h2 {
+body main section.about-me section.title h2 {
   font-size: 2rem;
+}
+body main section.about-me section.description {
+  width: 20%;
+  text-align: center;
 }
 body main section.about-me section.description .progress-bar-area p {
   margin-top: 1rem;
+}
+body main section.resume {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+}
+body main section.resume section.table {
+  flex: 5 1 500px;
+  padding: 2rem;
+}
+body main section.resume section.table table {
+  border-collapse: collapse;
+}
+body main section.resume section.table table tr {
+  border-bottom: 2px solid gray;
+  transition: all 0.2s ease;
+}
+body main section.resume section.table table tr:hover {
+  background-color: rgb(184, 255, 222);
+}
+body main section.resume section.table table tr td {
+  padding: 1rem;
 }/*# sourceMappingURL=style.css.map */
