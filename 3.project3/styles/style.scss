@@ -1,4 +1,5 @@
 $primaryColor: rgb(54, 212, 138);
+$secondColor: rgb(231, 255, 233);
 
 @font-face {
   font-family: jf-openhuninn;
@@ -83,6 +84,26 @@ body {
         // border: 2px, solid, red;
         img {
           width: 50%;
+        }
+      }
+    }
+
+    section.about-me {
+      background-color: $secondColor;
+      padding: 5rem 0rem;
+      display: flex;
+      justify-content: center;
+
+      section.description {
+        width: 50%;
+        text-align: center;
+        h2 {
+          font-size: 2rem;
+        }
+        .progress-bar-area {
+          p {
+            margin-top: 1rem;
+          }
         }
       }
     }

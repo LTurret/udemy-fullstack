@@ -75,4 +75,20 @@ body main section.main-area div.img-area {
 }
 body main section.main-area div.img-area img {
   width: 50%;
+}
+body main section.about-me {
+  background-color: rgb(231, 255, 233);
+  padding: 5rem 0rem;
+  display: flex;
+  justify-content: center;
+}
+body main section.about-me section.description {
+  width: 50%;
+  text-align: center;
+}
+body main section.about-me section.description h2 {
+  font-size: 2rem;
+}
+body main section.about-me section.description .progress-bar-area p {
+  margin-top: 1rem;
 }/*# sourceMappingURL=style.css.map */
